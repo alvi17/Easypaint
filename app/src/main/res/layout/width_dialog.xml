@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:id="@+id/widthLinearLayout">
+
+    <ImageView
+        android:id="@+id/WidthimageView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        />
+
+    <SeekBar
+        android:id="@+id/widthseekBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:max="50"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+    <Button
+        android:id="@+id/widthbutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Width"
+        android:padding="15dp"
+        android:background="@drawable/green_button"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
+

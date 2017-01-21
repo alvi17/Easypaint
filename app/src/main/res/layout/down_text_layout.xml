@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="2" >
+
+     
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+               >
+                  <TextView
+                android:id="@+id/fontdowntextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FontSize:  "
+                android:layout_margin="5dp" />
+
+            <SeekBar
+                
+                android:id="@+id/fontdownseekBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:max="30"
+            />
+                
+      
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Text Color"
+                android:layout_margin="5dp"
+                
+                
+                />
+			<RadioGroup 
+			    android:id="@+id/downradioGroup"
+			    android:layout_height="wrap_content"
+			    android:layout_width="wrap_content"
+			    android:orientation="horizontal"
+			    
+			    >
+            <RadioButton
+                android:id="@+id/blackdownbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Black" 
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/whitedownbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="White" />
+                <RadioButton
+                    android:id="@+id/reddownbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Red" />
+
+                </RadioGroup>                    
+        </TableRow>
+
+       		<TableRow 
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content">
+
+		</TableRow>
+        
+
+    </TableLayout>
+    <LinearLayout 
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"  
+        android:orientation="vertical"     
+        >
+        <TextView
+            android:id="@+id/downTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Text At Bottom"
+            android:layout_margin="15dp"
+            android:layout_gravity="center_horizontal"
+            />
+        <EditText 
+            android:id="@+id/downText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Text"
+            android:layout_marginTop="10dp"
+            />
+        <Button 
+            android:id="@+id/submitdown"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Enter Text"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/green_button"
+            />
+        
+    </LinearLayout>
+
+</LinearLayout>

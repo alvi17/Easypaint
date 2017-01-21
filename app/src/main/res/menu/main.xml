@@ -1,0 +1,81 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="alvi17.easypaint.MainActivity" >
+
+ 
+    <item android:id="@+id/erase"
+        android:title="Eraser"
+        android:orderInCategory="1"
+		android:icon="@drawable/ic_action_eraser_309104_640"
+        app:showAsAction="always"
+
+        ></item>
+    
+    <item android:id="@+id/clear"
+        android:title="Text"
+        android:orderInCategory="6"
+
+        android:icon="@drawable/ic_action_editor_format_color_text"
+        app:showAsAction="always"
+
+        >
+        <menu >
+           
+        <item android:id="@+id/uptext"
+        android:title="Top Text"
+            android:icon="@drawable/ic_action_editor_format_color_text"
+        android:orderInCategory="6"
+   
+
+        app:showAsAction="always"
+
+
+                />
+                <item android:id="@+id/downtext"
+        android:title="Bottom Text"
+        android:orderInCategory="6"
+                    android:icon="@drawable/ic_action_editor_format_color_text"
+        app:showAsAction="always"
+
+       />
+        </menu>
+        
+        
+        </item>
+    <item android:id="@+id/fb"
+        android:title="Share\nFacebook"
+        android:orderInCategory="4"
+        android:icon="@drawable/ic_action_social_share"
+
+        app:showAsAction="always"
+
+        />
+        <item android:id="@+id/color"
+        android:title="Line\nColor"
+        android:orderInCategory="3"
+            android:icon="@drawable/ic_action_image_palette"
+
+        app:showAsAction="always"
+
+        />
+       <item android:id="@+id/line"
+        android:title="Line\nWidth"
+        android:orderInCategory="2"
+           android:icon="@drawable/ic_action_content_create"
+
+           app:showAsAction="always"
+
+        />
+    <item android:id="@+id/saveMenu"
+        android:title="Save"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_action_content_save"
+
+        app:showAsAction="always"
+
+        />
+
+    
+
+</menu>
