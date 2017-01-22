@@ -50,7 +50,7 @@
                     android:minHeight="50dp"
                    >
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
 
                         android:id="@+id/drawer_icon"
                         android:layout_width="wrap_content"

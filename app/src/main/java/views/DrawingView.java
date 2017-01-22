@@ -115,10 +115,15 @@ public class DrawingView extends View{
 	
 			if(isload==true){
 				Bitmap b=BitmapFactory.decodeFile(paintselectedImagePath);
-				bit=Bitmap.createScaledBitmap(b, getWidth(), getHeight(), true).copy(Bitmap.Config.ARGB_8888, true);
-				
-				i=1;
-				isload=false;
+				if(b!=null) {
+					bit = Bitmap.createScaledBitmap(b, getWidth(), getHeight(), true).copy(Bitmap.Config.ARGB_8888, true);
+
+					i = 1;
+					isload = false;
+				}
+				else {
+					Toast.makeText(this.getContext(),"There was a problem loading your image." + "\nPlease select from previously saved image or from Gallery.",Toast.LENGTH_LONG).show();
+				}
 			}
 			
 			if(i==1)

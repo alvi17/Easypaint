@@ -48,6 +48,9 @@ import com.facebook.login.widget.LoginButton;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.ShareDialog;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -88,6 +91,8 @@ public class MainActivity extends AppCompatActivity{
     Custom_Drawer_Adapter adapter;
     List<DrawerItem> dataList;
     FrameLayout fm;
+    private InterstitialAd interstitial;
+    boolean isadLoaded=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -133,8 +138,27 @@ public class MainActivity extends AppCompatActivity{
 //        } catch (NoSuchAlgorithmException e) {
 //
 //        }
+        interstitial=new InterstitialAd(this);
+        interstitial.setAdUnitId("ca-app-pub-6508526601344465/4046023638");
+        AdRequest aRequest = new AdRequest.Builder().build();
+
+        // Begin loading your interstitial.
+        interstitial.loadAd(aRequest);
+
+        interstitial.setAdListener(
+                new AdListener() {
+                    @Override
+                    public void onAdLoaded() {
+                        super.onAdLoaded();
+                        isadLoaded=true;
+
+                    }
+                }
+        );
 
     }
+
+
 
     private void addDrawerItems() {
         dataList.add(new DrawerItem(" Main Options"));
@@ -350,12 +374,16 @@ public class MainActivity extends AppCompatActivity{
         {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                if(isadLoaded)
+                {
+                    interstitial.show();
+                }
                 finish();
                 //
             }
         });
         alert.setNegativeButton("Cancel", null);
-       AlertDialog dialog=alert.create();
+        AlertDialog dialog=alert.create();
         dialog.show();
       //  super.onBackPressed();
 
@@ -956,7 +984,7 @@ public class MainActivity extends AppCompatActivity{
                 Uri selectedImageUri = data.getData();
                 selectedImagePath = getPath(selectedImageUri);
 
-                Bitmap bit=Bitmap.createBitmap(BitmapFactory.decodeFile(selectedImagePath)).copy(Bitmap.Config.ARGB_8888, true);
+//                Bitmap bit=Bitmap.createBitmap(BitmapFactory.decodeFile(selectedImagePath)).copy(Bitmap.Config.ARGB_8888, true);
 
                 paintView=(DrawingView)findViewById(R.id.paintView);
                 paintView.isload=true;
@@ -967,6 +995,8 @@ public class MainActivity extends AppCompatActivity{
 
             }
         }
+
+        //ca-app-pub-6508526601344465/4046023638
     }
 
 
